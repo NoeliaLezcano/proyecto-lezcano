@@ -1,0 +1,20 @@
+[
+   {
+      "title": "Notas al pie",
+      "price": 2600.55,
+      "thumbnail": "https://res.cloudinary.com/dnxs7gjj2/image/upload/v1644458526/notas-al-pie_alejandro-dolina_zmhmvg.jpg",
+      "id": 1
+   },
+   {
+      "title": "La última vez",
+      "price": 1880.2,
+      "thumbnail": "https://res.cloudinary.com/dnxs7gjj2/image/upload/v1647310501/la-ultima-vez_guillermo-martinez_fqlylk.jpg",
+      "id": 2
+   },
+   {
+      "title": "La cocinera de Castamar",
+      "price": 2150.99,
+      "thumbnail": "https://res.cloudinary.com/dnxs7gjj2/image/upload/v1644458596/portada_la-cocinera-de-castamar_fernando-j-munez_202109101752_ffp2te.jpg",
+      "id": 3
+   }
+]
