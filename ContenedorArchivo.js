@@ -25,6 +25,7 @@ class ContenedorArchivo {
         await this._read();
         this.productos.push(producto);
         await this._write();
+        return producto;
 
     }
 
@@ -36,20 +37,24 @@ class ContenedorArchivo {
     async getById(id) {
         await this._read();
         const objectById = this.productos.find(producto => producto.id === id);
-        if(objectById == undefined){
-            console.log("id inexistente");
-        }else{
-            return objectById;
+        if (!objectById) {
+            const error = new Error('Producto no encontrado')
+            error.tipo = 'db not found'
+            throw error
         }
+        return objectById;
     }
 
     async deleteById(id) {
         await this._read();
         const indice = this.productos.findIndex(producto => producto.id === id);
-        if (indice !== -1) {
-            this.productos.splice(indice, 1);
-            await this._write();
+        if (indice === -1) {
+            const error = new Error('Producto no encontrado');
+            error.tipo = 'db not found';
+            throw error;
         }
+        this.productos.splice(indice, 1);
+        await this._write();
     }
 
     async deleteAll() {
@@ -61,6 +66,21 @@ class ContenedorArchivo {
         await this._read();
         const random = this.productos[Math.floor(Math.random() * this.productos.length)];
         return random;
+    }
+
+    async replaceById (id, datos) {
+        await this._read();
+        const indice = this.productos.findIndex(producto => producto.id === id);
+        if (indice === -1) {
+            const error = new Error('Producto no encontrado')
+            error.tipo = 'db not found'
+            throw error
+        }
+        const producto = new Producto(datos.title, datos.price, datos.thumbnail, datos.id);
+        producto.id = id;
+        this.productos[indice] = producto;
+        await this._write();
+        return producto;
     }
 }
 
