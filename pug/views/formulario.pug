@@ -1,0 +1,22 @@
+extends inicio
+
+block formulario
+    h1(style="color:blue") Ingrese Producto
+    br
+    form(action="/productos" method="post") 
+
+        div(class="form-group")
+            label(for="nombre") Nombre 
+            input(id="nombre" class="form-control" type="text" name="nombre")
+
+        div(class="form-group")
+            label(for="precio") Precio 
+            input(id="precio" class="form-control" type="number" name="precio")           
+
+        div(class="form-group")
+            label(for="foto") Foto URL
+            input(id="foto" class="form-control" type="text" name="foto")
+
+        button(class="btn btn-success mt-3 mb-5") Enviar
+
+    a(class='button' href='/productos') Ir a historial

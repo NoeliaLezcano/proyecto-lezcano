@@ -1,0 +1,22 @@
+extends productosCargados 
+
+block historial
+
+    h1(style="color:blue") Vista de Productos 
+        if productos.length > 0
+            div(class="table-responsive") 
+                table(class="table table-dark")
+                    tr(style="color: yellow;")
+                        th Nombre
+                        th Precio
+                        th Foto 
+                    for producto of productos 
+                        tr  
+                            td #{producto.nombre}
+                            td #{producto.precio}
+                            td 
+                                img(src="#{producto.foto}")
+        else 
+            h3(class="alert alert-danger") no se encontraron datos
+
+    a(class='button' href='/') Volver al formulario
