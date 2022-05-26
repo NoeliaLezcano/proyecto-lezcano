@@ -1,0 +1,30 @@
+h1 {
+    color: blue;
+}
+
+label {
+    font-weight: bold;
+    font-style: italic;
+}
+
+td img{
+    width: 100px;
+}
+
+li{
+    list-style:none;
+}
+
+.fecha{
+    color: brown;
+}
+
+.autor{
+    color: blue;
+    font-weight: bold;
+}
+
+.texto{
+    color: green;
+    font-style: italic;
+}
