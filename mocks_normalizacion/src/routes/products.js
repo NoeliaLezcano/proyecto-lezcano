@@ -4,9 +4,11 @@ import productsService from "../services/entities/Products.js";
 import io from "../services/io.js";
 import { __dirname } from "../utils.js";
 import { databaseMySql } from "../services/database/db.js";
+import ApiProductosMock from '../api/productoTest.js'
 
 const router = express.Router();
 const products = new productsService(databaseMySql, "products");
+const productsTest = new ApiProductosMock();
 
 const filePath = (protocol, hostname, filename) => {
   return `/images/${filename}`;
@@ -74,5 +76,14 @@ router.delete("/:id", (req, res) => {
     res.send(product);
   });
 });
+
+
+router.get("/api/productos-test", async (req, res, next) => {
+  try {
+      res.json(await productsTest.listarAll())
+  } catch (error) {
+      next(error)
+  }
+})
 
 export default router;
