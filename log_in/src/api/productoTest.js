@@ -1,4 +1,4 @@
-import ContenedorMemoria from '../contenedores/ContenedorMemoria.js'
+import ContenedorMemoria from '../contenedores/ContenedorMemoria.js.js'
 import { generarProducto } from '../utils/generadorProductos.js' 
 import { generarId } from '../utils/generadorDeIds.js'
 

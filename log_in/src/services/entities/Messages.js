@@ -1,5 +1,5 @@
 import Message from "../../classes/Message.js";
-import { returnMessage } from "../../utils.js";
+import { returnMessage } from "../../utils.js.js";
 
 class Messages {
   constructor(db, table) {

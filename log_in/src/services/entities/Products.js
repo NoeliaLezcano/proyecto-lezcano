@@ -1,6 +1,6 @@
 import fs from "fs";
 import Product from "../../classes/Product.js";
-import { __dirname, returnMessage } from "../../utils.js";
+import { __dirname, returnMessage } from "../../utils.js.js";
 
 export default class Products {
   constructor(db, table) {

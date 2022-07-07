@@ -2,7 +2,7 @@ import express from "../services/express.js";
 import upload from "../services/upload.js";
 import productsService from "../services/entities/Products.js";
 import io from "../services/io.js";
-import { __dirname } from "../utils.js";
+import { __dirname } from "../utils.js.js";
 import { databaseMySql } from "../services/database/db.js";
 import ApiProductosMock from '../api/productoTest.js'
 

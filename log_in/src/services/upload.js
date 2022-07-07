@@ -1,5 +1,5 @@
 import multer from "multer";
-import { __dirname } from "../utils.js";
+import { __dirname } from "../utils.js.js";
 
 const storage = multer.diskStorage({
   destination: __dirname + "/public/images",
